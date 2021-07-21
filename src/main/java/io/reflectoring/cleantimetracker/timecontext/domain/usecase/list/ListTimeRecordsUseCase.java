@@ -19,9 +19,9 @@ public class ListTimeRecordsUseCase {
 
   private static final int INTERVAL_MAXIMUM_DAYS = 31;
 
-  private QueryTimeRecordsPort queryTimeRecordsPort;
+  private final QueryTimeRecordsPort queryTimeRecordsPort;
 
-  private QueryTasksPort queryTasksPort;
+  private final QueryTasksPort queryTasksPort;
 
   public ListTimeRecordsUseCase(QueryTimeRecordsPort queryTimeRecordsPort, QueryTasksPort queryTasksPort) {
     this.queryTimeRecordsPort = queryTimeRecordsPort;

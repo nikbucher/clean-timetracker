@@ -14,9 +14,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProjectContextAdapter implements QueryTasksPort {
 
-  private TimeContextAdapter timeContextAdapter;
+  private final TimeContextAdapter timeContextAdapter;
 
-  private TaskMapper taskMapper;
+  private final TaskMapper taskMapper;
 
   public ProjectContextAdapter(TimeContextAdapter timeContextAdapter, TaskMapper taskMapper) {
     this.timeContextAdapter = timeContextAdapter;

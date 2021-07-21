@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoadProjectUseCase {
 
-  private QueryProjectsPort queryPort;
+  private final QueryProjectsPort queryPort;
 
   public LoadProjectUseCase(QueryProjectsPort queryPort) {
     this.queryPort = queryPort;

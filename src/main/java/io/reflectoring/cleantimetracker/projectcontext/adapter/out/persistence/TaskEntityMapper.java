@@ -14,9 +14,9 @@ import org.springframework.stereotype.Component;
 @Component
 class TaskEntityMapper {
 
-  private EntityManager entityManager;
+  private final EntityManager entityManager;
 
-  private ProjectEntityMapper projectEntityMapper;
+  private final ProjectEntityMapper projectEntityMapper;
 
   TaskEntityMapper(EntityManager entityManager, ProjectEntityMapper projectEntityMapper) {
     this.entityManager = entityManager;

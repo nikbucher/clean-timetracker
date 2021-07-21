@@ -20,15 +20,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 class EditProjectController {
 
-  private ListTasksUseCase listTasksUseCase;
+  private final ListTasksUseCase listTasksUseCase;
 
-  private LoadProjectUseCase loadProjectUseCase;
+  private final LoadProjectUseCase loadProjectUseCase;
 
-  private EditProjectModelMapper editProjectModelMapper;
+  private final EditProjectModelMapper editProjectModelMapper;
 
-  private AddTaskUseCase addTaskUseCase;
+  private final AddTaskUseCase addTaskUseCase;
 
-  private ChangeTaskStatusUseCase changeTaskStatusUseCase;
+  private final ChangeTaskStatusUseCase changeTaskStatusUseCase;
 
   EditProjectController(ListTasksUseCase listTasksUseCase, LoadProjectUseCase loadProjectUseCase, EditProjectModelMapper editProjectModelMapper, AddTaskUseCase addTaskUseCase, ChangeTaskStatusUseCase changeTaskStatusUseCase) {
     this.listTasksUseCase = listTasksUseCase;

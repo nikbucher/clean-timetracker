@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 @Service
 class TaskPersistenceAdapter implements CreateTaskPort, QueryTasksPort, UpdateTaskPort {
 
-  private TaskEntityRepository taskEntityRepository;
+  private final TaskEntityRepository taskEntityRepository;
 
-  private TaskEntityMapper taskEntityMapper;
+  private final TaskEntityMapper taskEntityMapper;
 
   public TaskPersistenceAdapter(TaskEntityRepository taskEntityRepository, TaskEntityMapper taskEntityMapper) {
     this.taskEntityRepository = taskEntityRepository;

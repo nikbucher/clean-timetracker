@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ListProjectsUseCase {
 
-  private QueryProjectsPort queryPort;
+  private final QueryProjectsPort queryPort;
 
   public ListProjectsUseCase(QueryProjectsPort queryPort) {
     this.queryPort = queryPort;

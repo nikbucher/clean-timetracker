@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ListTimeRecordsController {
 
-  private ListTimeRecordsUseCase listTimeRecordsUseCase;
+  private final ListTimeRecordsUseCase listTimeRecordsUseCase;
 
-  private SubmitTimeRecordsUseCase submitTimeRecordsUseCase;
+  private final SubmitTimeRecordsUseCase submitTimeRecordsUseCase;
 
   public ListTimeRecordsController(ListTimeRecordsUseCase listTimeRecordsUseCase, SubmitTimeRecordsUseCase submitTimeRecordsUseCase) {
     this.listTimeRecordsUseCase = listTimeRecordsUseCase;

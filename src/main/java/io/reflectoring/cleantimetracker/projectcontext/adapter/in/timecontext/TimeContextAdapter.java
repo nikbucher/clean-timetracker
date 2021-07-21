@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TimeContextAdapter {
 
-  private QueryTasksPort queryTasksPort;
+  private final QueryTasksPort queryTasksPort;
 
   public TimeContextAdapter(QueryTasksPort queryTasksPort) {
     this.queryTasksPort = queryTasksPort;

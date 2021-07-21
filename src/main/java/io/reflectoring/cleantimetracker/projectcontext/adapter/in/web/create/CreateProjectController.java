@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 class CreateProjectController {
 
-  private CreateProjectUseCase createProjectUseCase;
+  private final CreateProjectUseCase createProjectUseCase;
 
   CreateProjectController(CreateProjectUseCase createProjectUseCase) {
     this.createProjectUseCase = createProjectUseCase;

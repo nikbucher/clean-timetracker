@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 class EditProjectModelMapper {
 
-  private TaskModelMapper taskModelMapper;
+  private final TaskModelMapper taskModelMapper;
 
   EditProjectModelMapper(TaskModelMapper taskModelMapper) {
     this.taskModelMapper = taskModelMapper;

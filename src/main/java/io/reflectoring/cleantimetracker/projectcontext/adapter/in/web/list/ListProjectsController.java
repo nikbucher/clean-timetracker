@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 class ListProjectsController {
 
-  private ListProjectsUseCase listProjectsUseCase;
+  private final ListProjectsUseCase listProjectsUseCase;
 
-  private ProjectListModelMapper projectListModelMapper;
+  private final ProjectListModelMapper projectListModelMapper;
 
-  private ChangeProjectStatusUseCase changeProjectStatusUseCase;
+  private final ChangeProjectStatusUseCase changeProjectStatusUseCase;
 
   ListProjectsController(ListProjectsUseCase listProjectsUseCase, ProjectListModelMapper projectListModelMapper, ChangeProjectStatusUseCase changeProjectStatusUseCase) {
     this.listProjectsUseCase = listProjectsUseCase;

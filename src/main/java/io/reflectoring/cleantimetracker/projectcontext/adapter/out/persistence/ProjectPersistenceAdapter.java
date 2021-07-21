@@ -14,9 +14,9 @@ import org.springframework.stereotype.Service;
 @Service
 class ProjectPersistenceAdapter implements CreateProjectPort, QueryProjectsPort, UpdateProjectPort {
 
-  private ProjectRepository projectRepository;
+  private final ProjectRepository projectRepository;
 
-  private ProjectEntityMapper projectEntityMapper;
+  private final ProjectEntityMapper projectEntityMapper;
 
   ProjectPersistenceAdapter(ProjectRepository projectRepository, ProjectEntityMapper projectEntityMapper) {
     this.projectRepository = projectRepository;

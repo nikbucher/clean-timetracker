@@ -4,6 +4,6 @@ public enum TaskStatus {
 
   ACTIVE,
 
-  INACTIVE;
+  INACTIVE
 
 }

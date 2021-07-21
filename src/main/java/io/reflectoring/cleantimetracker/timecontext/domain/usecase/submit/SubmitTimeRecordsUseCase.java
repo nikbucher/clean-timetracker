@@ -21,9 +21,9 @@ public class SubmitTimeRecordsUseCase {
 
   private static final int MAXIMUM_MINUTES_PER_DAY = 24 * 60;
 
-  private SaveTimeRecordsPort saveTimeRecordsPort;
+  private final SaveTimeRecordsPort saveTimeRecordsPort;
 
-  private QueryTasksPort queryTasksPort;
+  private final QueryTasksPort queryTasksPort;
 
   public SubmitTimeRecordsUseCase(SaveTimeRecordsPort saveTimeRecordsPort, QueryTasksPort queryTasksPort) {
     this.saveTimeRecordsPort = saveTimeRecordsPort;

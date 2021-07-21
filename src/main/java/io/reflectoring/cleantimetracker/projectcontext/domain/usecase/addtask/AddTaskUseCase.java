@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class AddTaskUseCase {
 
-  private QueryProjectsPort queryProjectsPort;
+  private final QueryProjectsPort queryProjectsPort;
 
-  private CreateTaskPort createTaskPort;
+  private final CreateTaskPort createTaskPort;
 
   public AddTaskUseCase(QueryProjectsPort queryProjectsPort, CreateTaskPort createTaskPort) {
     this.queryProjectsPort = queryProjectsPort;

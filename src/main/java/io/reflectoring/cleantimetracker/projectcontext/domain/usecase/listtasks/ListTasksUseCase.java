@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ListTasksUseCase {
 
-  private QueryTasksPort queryTasksPort;
+  private final QueryTasksPort queryTasksPort;
 
   public ListTasksUseCase(QueryTasksPort queryTasksPort) {
     this.queryTasksPort = queryTasksPort;

@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class ChangeTaskStatusUseCase {
 
-  private QueryTasksPort queryTasksPort;
+  private final QueryTasksPort queryTasksPort;
 
-  private UpdateTaskPort updateTaskPort;
+  private final UpdateTaskPort updateTaskPort;
 
   public ChangeTaskStatusUseCase(QueryTasksPort queryTasksPort, UpdateTaskPort updateTaskPort) {
     this.queryTasksPort = queryTasksPort;

@@ -7,7 +7,7 @@ class ProjectEntityTestFactory {
 
   static final String SQL = "/io/reflectoring/cleantimetracker/projectcontext/adapter/out/persistence/default-project.sql";
 
-  private ProjectRepository projectRepository;
+  private final ProjectRepository projectRepository;
 
   ProjectEntityTestFactory(ProjectRepository projectRepository) {
     this.projectRepository = projectRepository;

@@ -11,9 +11,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class TimeRecordPersistenceAdapter implements QueryTimeRecordsPort, SaveTimeRecordsPort {
 
-  private TimeRecordMapper timeRecordMapper;
+  private final TimeRecordMapper timeRecordMapper;
 
-  private TimeRecordRepository timeRecordRepository;
+  private final TimeRecordRepository timeRecordRepository;
 
   public TimeRecordPersistenceAdapter(TimeRecordMapper timeRecordMapper, TimeRecordRepository timeRecordRepository) {
     this.timeRecordMapper = timeRecordMapper;
