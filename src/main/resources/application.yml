@@ -1,0 +1,6 @@
+spring:
+  jpa:
+    hibernate:
+    #      ddl-auto: create
+    defer-datasource-initialization: true
+    generate-ddl: true
