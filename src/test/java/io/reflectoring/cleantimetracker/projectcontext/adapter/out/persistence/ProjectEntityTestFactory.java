@@ -15,8 +15,8 @@ class ProjectEntityTestFactory {
 
   ProjectEntity defaultProject() {
     return projectRepository
-            .findById(1L)
-            .orElse(null);
+      .findById(1L)
+      .orElse(null);
   }
 
 }

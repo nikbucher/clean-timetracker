@@ -1,7 +1,6 @@
 package io.reflectoring.cleantimetracker.timecontext.domain.entity;
 
 import java.io.Serializable;
-
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

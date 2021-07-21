@@ -1,11 +1,10 @@
 package io.reflectoring.cleantimetracker.timecontext.adapter.out.persistence;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecord;
 import io.reflectoring.cleantimetracker.timecontext.domain.port.out.persistence.QueryTimeRecordsPort;
 import io.reflectoring.cleantimetracker.timecontext.domain.port.out.persistence.SaveTimeRecordsPort;
+import java.time.LocalDate;
+import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component

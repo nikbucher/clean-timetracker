@@ -1,10 +1,9 @@
 package io.reflectoring.cleantimetracker.projectcontext.domain.usecase.listtasks;
 
-import java.util.List;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Task;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.QueryTasksPort;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service

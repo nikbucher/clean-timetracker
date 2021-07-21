@@ -1,17 +1,16 @@
 package io.reflectoring.cleantimetracker.timecontext.domain.usecase.list;
 
+import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecord;
+import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecordWithTask;
+import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeTrackingTask;
+import io.reflectoring.cleantimetracker.timecontext.domain.port.out.persistence.QueryTimeRecordsPort;
+import io.reflectoring.cleantimetracker.timecontext.domain.port.out.projectcontext.QueryTasksPort;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecord;
-import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecordWithTask;
-import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeTrackingTask;
-import io.reflectoring.cleantimetracker.timecontext.domain.port.out.persistence.QueryTimeRecordsPort;
-import io.reflectoring.cleantimetracker.timecontext.domain.port.out.projectcontext.QueryTasksPort;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -45,11 +44,11 @@ public class ListTimeRecordsUseCase {
    */
   private List<TimeRecordWithTask> expandTasks(List<TimeRecord> timeRecords) {
     Set<Long> taskIds = timeRecords.stream()
-            .map(TimeRecord::getTaskId)
-            .collect(Collectors.toSet());
+      .map(TimeRecord::getTaskId)
+      .collect(Collectors.toSet());
 
     Map<Long, TimeTrackingTask> tasksById = queryTasksPort.listByIds(taskIds).stream()
-            .collect(Collectors.toMap(TimeTrackingTask::getId, (task) -> task));
+      .collect(Collectors.toMap(TimeTrackingTask::getId, (task) -> task));
 
     List<TimeRecordWithTask> expandedTimeRecords = new ArrayList<>();
     timeRecords.forEach((record) -> expandedTimeRecords.add(TimeRecordWithTask.fromTimeRecord(record, tasksById.get(record.getTaskId()))));

@@ -1,9 +1,7 @@
 package io.reflectoring.cleantimetracker.timecontext.adapter.in.web.list;
 
-import javax.validation.constraints.NotNull;
-
 import java.time.LocalDate;
-
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

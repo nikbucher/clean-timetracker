@@ -1,5 +1,7 @@
 package io.reflectoring.cleantimetracker.timecontext.adapter.out.persistence;
 
+import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecordStatus;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,10 +9,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import java.time.LocalDate;
-
-import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecordStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

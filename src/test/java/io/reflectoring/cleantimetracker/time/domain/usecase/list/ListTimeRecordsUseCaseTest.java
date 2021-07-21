@@ -1,7 +1,10 @@
 package io.reflectoring.cleantimetracker.time.domain.usecase.list;
 
-import java.time.LocalDate;
-import java.util.List;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.anySet;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.when;
 
 import io.reflectoring.cleantimetracker.MockitoExtension;
 import io.reflectoring.cleantimetracker.time.domain.entity.TimeRecordTestFactory;
@@ -15,14 +18,12 @@ import io.reflectoring.cleantimetracker.timecontext.domain.usecase.list.Interval
 import io.reflectoring.cleantimetracker.timecontext.domain.usecase.list.IntervalTooLongException;
 import io.reflectoring.cleantimetracker.timecontext.domain.usecase.list.ListTimeRecordsQueryParameters;
 import io.reflectoring.cleantimetracker.timecontext.domain.usecase.list.ListTimeRecordsUseCase;
+import java.time.LocalDate;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import static org.assertj.core.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anySet;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class ListTimeRecordsUseCaseTest {
@@ -39,18 +40,18 @@ class ListTimeRecordsUseCaseTest {
   @Test
   void whenIntervalMoreThanAMonth_thenThrowsException() {
     ListTimeRecordsQueryParameters params = ListTimeRecordsQueryParameters.builder()
-            .start(LocalDate.of(2018, 10, 1))
-            .end(LocalDate.of(2018, 11, 15))
-            .build();
+      .start(LocalDate.of(2018, 10, 1))
+      .end(LocalDate.of(2018, 11, 15))
+      .build();
     assertThatThrownBy(() -> usecase.listTimeRecords(params)).isInstanceOf(IntervalTooLongException.class);
   }
 
   @Test
   void whenEndBeforeStart_thenThrowsException() {
     ListTimeRecordsQueryParameters params = ListTimeRecordsQueryParameters.builder()
-            .start(LocalDate.of(2018, 10, 1))
-            .end(LocalDate.of(2018, 9, 30))
-            .build();
+      .start(LocalDate.of(2018, 10, 1))
+      .end(LocalDate.of(2018, 9, 30))
+      .build();
     assertThatThrownBy(() -> usecase.listTimeRecords(params)).isInstanceOf(IntervalEndBeforeStartException.class);
   }
 
@@ -61,9 +62,9 @@ class ListTimeRecordsUseCaseTest {
     Long[] taskIds = new Long[]{1L, 2L, 3L};
 
     ListTimeRecordsQueryParameters params = ListTimeRecordsQueryParameters.builder()
-            .start(start)
-            .end(end)
-            .build();
+      .start(start)
+      .end(end)
+      .build();
 
     List<TimeRecord> providedRecords = whenPersistenceProvidesTimeRecords(start, end, taskIds);
     List<TimeTrackingTask> providedTasks = whenProjectContextProvidesTasks(taskIds);

@@ -15,7 +15,7 @@ class TaskEntityTestFactory {
 
   TaskEntity defaultTask() {
     return taskRepository.findById(1L)
-            .orElse(null);
+      .orElse(null);
   }
 
 }

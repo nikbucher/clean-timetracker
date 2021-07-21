@@ -1,15 +1,13 @@
 package io.reflectoring.cleantimetracker.projectcontext.domain.usecase.changeprojectstatus;
 
-import javax.transaction.Transactional;
-
-import java.util.Optional;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectStatus;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.QueryProjectsPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.UpdateProjectPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.ProjectNotFoundException;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service

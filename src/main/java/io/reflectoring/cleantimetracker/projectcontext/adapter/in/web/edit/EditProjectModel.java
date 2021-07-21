@@ -1,8 +1,7 @@
 package io.reflectoring.cleantimetracker.projectcontext.adapter.in.web.edit;
 
-import java.util.List;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectStatus;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

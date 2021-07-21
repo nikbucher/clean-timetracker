@@ -1,11 +1,10 @@
 package io.reflectoring.cleantimetracker.projectcontext.adapter.in.web.list;
 
-import java.util.List;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.changeprojectstatus.ChangeProjectStatusUseCase;
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.listprojects.ListProjectsUseCase;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,12 +1,13 @@
 package io.reflectoring.cleantimetracker.projectcontext.adapter.out.persistence;
 
-import javax.persistence.EntityManager;
+import static org.assertj.core.api.Java6Assertions.assertThat;
 
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Task;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.TaskId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.TaskStatus;
+import javax.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +16,15 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import static org.assertj.core.api.Java6Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
 @Import({
-        ProjectEntityMapper.class,
-        TaskPersistenceAdapter.class,
-        TaskEntityMapper.class,
-        TaskEntityTestFactory.class,
-        ProjectEntityTestFactory.class
+  ProjectEntityMapper.class,
+  TaskPersistenceAdapter.class,
+  TaskEntityMapper.class,
+  TaskEntityTestFactory.class,
+  ProjectEntityTestFactory.class
 })
 @TestPropertySource(properties = "spring.datasource.data=data-test.sql")
 class TaskPersistenceAdapterIntegrationTest {
@@ -46,11 +46,11 @@ class TaskPersistenceAdapterIntegrationTest {
   void savesNewTask() {
     ProjectEntity project = projectEntityTestFactory.defaultProject();
     Task task = Task.builder()
-            .name("Task")
-            .project(Project.builder()
-                    .id(ProjectId.of(project.getId()))
-                    .build())
-            .build();
+      .name("Task")
+      .project(Project.builder()
+        .id(ProjectId.of(project.getId()))
+        .build())
+      .build();
     Task savedTask = taskPersistence.saveTask(task);
     assertThat(savedTask.getId()).isNotNull();
   }

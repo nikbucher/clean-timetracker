@@ -1,9 +1,8 @@
 package io.reflectoring.cleantimetracker.timecontext.domain.port.out.projectcontext;
 
+import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeTrackingTask;
 import java.util.List;
 import java.util.Set;
-
-import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeTrackingTask;
 
 public interface QueryTasksPort {
 

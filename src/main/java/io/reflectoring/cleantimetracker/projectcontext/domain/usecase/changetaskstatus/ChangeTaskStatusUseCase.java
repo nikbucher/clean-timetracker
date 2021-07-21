@@ -1,15 +1,13 @@
 package io.reflectoring.cleantimetracker.projectcontext.domain.usecase.changetaskstatus;
 
-import javax.transaction.Transactional;
-
-import java.util.Optional;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Task;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.TaskId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.TaskStatus;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.QueryTasksPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.UpdateTaskPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.TaskNotFoundException;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service

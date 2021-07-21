@@ -1,5 +1,6 @@
 package io.reflectoring.cleantimetracker.projectcontext.adapter.out.persistence;
 
+import io.reflectoring.cleantimetracker.projectcontext.domain.entity.TaskStatus;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import io.reflectoring.cleantimetracker.projectcontext.domain.entity.TaskStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,9 +1,8 @@
 package io.reflectoring.cleantimetracker.projectcontext.domain.usecase.listprojects;
 
-import java.util.List;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.QueryProjectsPort;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service

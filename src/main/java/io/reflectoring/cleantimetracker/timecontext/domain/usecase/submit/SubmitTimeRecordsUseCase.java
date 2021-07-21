@@ -1,18 +1,21 @@
 package io.reflectoring.cleantimetracker.timecontext.domain.usecase.submit;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.Collectors.toMap;
+import static java.util.stream.Collectors.toSet;
 
 import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecord;
 import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeRecordStatus;
 import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeTrackingTask;
 import io.reflectoring.cleantimetracker.timecontext.domain.port.out.persistence.SaveTimeRecordsPort;
 import io.reflectoring.cleantimetracker.timecontext.domain.port.out.projectcontext.QueryTasksPort;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import org.springframework.stereotype.Service;
-import static java.util.stream.Collectors.*;
 
 @Service
 public class SubmitTimeRecordsUseCase {
@@ -41,21 +44,21 @@ public class SubmitTimeRecordsUseCase {
     List<TimeRecord> records = new ArrayList<>();
     for (SubmitTimeRecordInputData inputRecord : inputRecords) {
       records.add(TimeRecord.builder()
-              .date(inputRecord.getDate())
-              .minutes(inputRecord.getMinutes())
-              .taskId(inputRecord.getTaskId())
-              .status(TimeRecordStatus.OPEN)
-              .build());
+        .date(inputRecord.getDate())
+        .minutes(inputRecord.getMinutes())
+        .taskId(inputRecord.getTaskId())
+        .status(TimeRecordStatus.OPEN)
+        .build());
     }
     return records;
   }
 
   private Map<Long, TimeTrackingTask> tasksById(List<SubmitTimeRecordInputData> records) {
     Set<Long> taskIds = records.stream()
-            .map(SubmitTimeRecordInputData::getTaskId)
-            .collect(toSet());
+      .map(SubmitTimeRecordInputData::getTaskId)
+      .collect(toSet());
     return queryTasksPort.listByIds(taskIds).stream()
-            .collect(toMap(TimeTrackingTask::getId, (task) -> task));
+      .collect(toMap(TimeTrackingTask::getId, (task) -> task));
   }
 
   private void rejectSingleRecordWhenTooManyMinutes(SubmitTimeRecordInputData record) {
@@ -66,7 +69,7 @@ public class SubmitTimeRecordsUseCase {
 
   private void rejectRecordsWhenTooManyMinutesOnDay(List<SubmitTimeRecordInputData> records) {
     Map<LocalDate, Integer> minutesPerDay = records.stream()
-            .collect(groupingBy(SubmitTimeRecordInputData::getDate, summingInt(SubmitTimeRecordInputData::getMinutes)));
+      .collect(groupingBy(SubmitTimeRecordInputData::getDate, summingInt(SubmitTimeRecordInputData::getMinutes)));
     minutesPerDay.forEach((date, minutes) -> {
       if (minutes > MAXIMUM_MINUTES_PER_DAY) {
         throw new TooMuchTimePerDayException(minutes, date, MAXIMUM_MINUTES_PER_DAY);
@@ -78,8 +81,8 @@ public class SubmitTimeRecordsUseCase {
 
   private void rejectMultipleRecordsPerTaskAndDay(List<SubmitTimeRecordInputData> records) {
     Map<LocalDate, Map<Long, List<SubmitTimeRecordInputData>>> recordsPerDayAndTask = records.stream()
-            .collect(groupingBy(SubmitTimeRecordInputData::getDate,
-                    groupingBy(SubmitTimeRecordInputData::getTaskId)));
+      .collect(groupingBy(SubmitTimeRecordInputData::getDate,
+        groupingBy(SubmitTimeRecordInputData::getTaskId)));
     recordsPerDayAndTask.forEach((date, map) -> {
       map.forEach((taskId, recordsList) -> {
         if (recordsList.size() > 1) {

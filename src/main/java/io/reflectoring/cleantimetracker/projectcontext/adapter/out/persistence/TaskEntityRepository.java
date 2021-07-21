@@ -1,8 +1,7 @@
 package io.reflectoring.cleantimetracker.projectcontext.adapter.out.persistence;
 
-import java.util.List;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.TaskStatus;
+import java.util.List;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

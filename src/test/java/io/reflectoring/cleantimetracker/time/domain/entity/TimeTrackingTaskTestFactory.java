@@ -1,9 +1,8 @@
 package io.reflectoring.cleantimetracker.time.domain.entity;
 
+import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeTrackingTask;
 import java.util.ArrayList;
 import java.util.List;
-
-import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeTrackingTask;
 
 public class TimeTrackingTaskTestFactory {
 
@@ -17,13 +16,13 @@ public class TimeTrackingTaskTestFactory {
 
   public static TimeTrackingTask defaultTask(Long taskId) {
     return TimeTrackingTask.builder()
-            .active(Boolean.TRUE)
-            .id(taskId)
-            .invoiceable(Boolean.TRUE)
-            .name("Task " + taskId)
-            .projectId(42L)
-            .projectName("Project 42")
-            .build();
+      .active(Boolean.TRUE)
+      .id(taskId)
+      .invoiceable(Boolean.TRUE)
+      .name("Task " + taskId)
+      .projectId(42L)
+      .projectName("Project 42")
+      .build();
   }
 
 }

@@ -1,10 +1,9 @@
 package io.reflectoring.cleantimetracker.projectcontext.domain.usecase.createproject;
 
-import javax.transaction.Transactional;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectStatus;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.CreateProjectPort;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,9 +18,9 @@ public class CreateProjectUseCase {
 
   public Project createProject(String name) {
     Project project = Project.builder()
-            .name(name)
-            .status(ProjectStatus.INACTIVE)
-            .build();
+      .name(name)
+      .status(ProjectStatus.INACTIVE)
+      .build();
     return this.createProjectPort.createProject(project);
   }
 

@@ -1,14 +1,13 @@
 package io.reflectoring.cleantimetracker.timecontext.adapter.out.projectcontext;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-
 import io.reflectoring.cleantimetracker.projectcontext.adapter.in.timecontext.TimeContextAdapter;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Task;
 import io.reflectoring.cleantimetracker.timecontext.domain.entity.TimeTrackingTask;
 import io.reflectoring.cleantimetracker.timecontext.domain.port.out.projectcontext.QueryTasksPort;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import org.springframework.stereotype.Service;
 
 @Service

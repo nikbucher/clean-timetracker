@@ -1,11 +1,10 @@
 package io.reflectoring.cleantimetracker.projectcontext.domain.usecase.loadproject;
 
-import java.util.Optional;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.QueryProjectsPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.ProjectNotFoundException;
+import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service

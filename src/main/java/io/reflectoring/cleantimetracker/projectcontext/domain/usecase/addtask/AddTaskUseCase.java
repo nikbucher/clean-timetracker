@@ -1,15 +1,13 @@
 package io.reflectoring.cleantimetracker.projectcontext.domain.usecase.addtask;
 
-import javax.transaction.Transactional;
-
-import java.util.Optional;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Task;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.CreateTaskPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.QueryProjectsPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.ProjectNotFoundException;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -29,10 +27,10 @@ public class AddTaskUseCase {
     Project project = findProjectOrFail(projectId);
 
     Task task = Task.builder()
-            .invoiceable(invoiceable)
-            .name(taskName)
-            .project(project)
-            .build();
+      .invoiceable(invoiceable)
+      .name(taskName)
+      .project(project)
+      .build();
 
     createTaskPort.saveTask(task);
   }

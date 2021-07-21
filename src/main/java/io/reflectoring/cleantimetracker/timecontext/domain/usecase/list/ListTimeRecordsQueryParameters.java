@@ -1,7 +1,6 @@
 package io.reflectoring.cleantimetracker.timecontext.domain.usecase.list;
 
 import java.time.LocalDate;
-
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

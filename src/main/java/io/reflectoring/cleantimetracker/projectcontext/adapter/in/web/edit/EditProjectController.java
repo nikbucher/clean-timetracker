@@ -1,7 +1,5 @@
 package io.reflectoring.cleantimetracker.projectcontext.adapter.in.web.edit;
 
-import java.util.List;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Task;
@@ -10,6 +8,7 @@ import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.addtask.Ad
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.changetaskstatus.ChangeTaskStatusUseCase;
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.listtasks.ListTasksUseCase;
 import io.reflectoring.cleantimetracker.projectcontext.domain.usecase.loadproject.LoadProjectUseCase;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

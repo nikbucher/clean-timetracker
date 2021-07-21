@@ -1,14 +1,13 @@
 package io.reflectoring.cleantimetracker.projectcontext.adapter.out.persistence;
 
-import java.util.List;
-import java.util.Optional;
-
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.Project;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectId;
 import io.reflectoring.cleantimetracker.projectcontext.domain.entity.ProjectStatus;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.CreateProjectPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.QueryProjectsPort;
 import io.reflectoring.cleantimetracker.projectcontext.domain.port.out.persistence.UpdateProjectPort;
+import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service
